@@ -27,7 +27,7 @@ extension UIColor{
         if hexUpper.hasPrefix("#") {
             hexUpper = (hexUpper as NSString).substring(from: 1)
         }
-        print(hexUpper)
+
         var range = NSRange(location: 0, length: 2)
         let rHex = (hexUpper as NSString).substring(with: range)
         range.location = 2
