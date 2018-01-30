@@ -17,12 +17,13 @@ class LBMainTabBarController: UITabBarController {
         addChildVc("LBRank")
         addChildVc("LBDiscover")
         addChildVc("LBProfile")
+        
     }
     
     fileprivate func addChildVc(_ storyName : String) {
         // 通过storyboard获取控制器
         let childVc = UIStoryboard(name: storyName, bundle: nil).instantiateInitialViewController()!
-        let nav = UINavigationController.init(rootViewController: childVc)
+        let nav = LBNavController.init(rootViewController: childVc)
         // 将childVc作为子控制器
         addChildViewController(nav)
     }

@@ -12,7 +12,7 @@ class LBNavController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return UIStatusBarStyle.lightContent

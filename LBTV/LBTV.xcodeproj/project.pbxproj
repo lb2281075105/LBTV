@@ -35,6 +35,7 @@
 		3A0CC5001FAF304A00C3377C /* LBDiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CC4FF1FAF304A00C3377C /* LBDiscoverController.swift */; };
 		3A0CC5021FAF306000C3377C /* LBProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CC5011FAF306000C3377C /* LBProfileController.swift */; };
 		3A0CC5041FAF308400C3377C /* LBNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CC5031FAF308400C3377C /* LBNavController.swift */; };
+		F877D9962020524900B6030F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F877D9952020524900B6030F /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		3A0CC4FF1FAF304A00C3377C /* LBDiscoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBDiscoverController.swift; sourceTree = "<group>"; };
 		3A0CC5011FAF306000C3377C /* LBProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBProfileController.swift; sourceTree = "<group>"; };
 		3A0CC5031FAF308400C3377C /* LBNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBNavController.swift; sourceTree = "<group>"; };
+		F877D9952020524900B6030F /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,7 +186,7 @@
 		3A0CC4B51FAF258900C3377C /* classes */ = {
 			isa = PBXGroup;
 			children = (
-				3A0CC4B61FAF258900C3377C /* base */,
+				F877D99320203E0300B6030F /* base */,
 				3A0CC4B81FAF258900C3377C /* main */,
 				3A0CC4B71FAF258900C3377C /* home */,
 				3A0CC4BA1FAF258900C3377C /* profile */,
@@ -193,13 +195,6 @@
 				3A0CC4C31FAF2B2800C3377C /* tool */,
 			);
 			path = classes;
-			sourceTree = "<group>";
-		};
-		3A0CC4B61FAF258900C3377C /* base */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = base;
 			sourceTree = "<group>";
 		};
 		3A0CC4B71FAF258900C3377C /* home */ = {
@@ -250,6 +245,7 @@
 		3A0CC4C31FAF2B2800C3377C /* tool */ = {
 			isa = PBXGroup;
 			children = (
+				F877D9942020520100B6030F /* Extension */,
 				3A0CC4C41FAF2B2800C3377C /* Additions */,
 			);
 			path = tool;
@@ -294,6 +290,21 @@
 				3A0CC4FF1FAF304A00C3377C /* LBDiscoverController.swift */,
 			);
 			path = discover;
+			sourceTree = "<group>";
+		};
+		F877D99320203E0300B6030F /* base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		F877D9942020520100B6030F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F877D9952020524900B6030F /* UIColor+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,7 +376,7 @@
 				TargetAttributes = {
 					3A0CC4831FAF24B100C3377C = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 9266GAZZ3C;
+						DevelopmentTeam = MECQS3Z269;
 						ProvisioningStyle = Automatic;
 					};
 					3A0CC4971FAF24B100C3377C = {
@@ -455,6 +466,7 @@
 				3A0CC4E71FAF2B2800C3377C /* UIScreen+CZAddition.m in Sources */,
 				3A0CC4881FAF24B100C3377C /* AppDelegate.swift in Sources */,
 				3A0CC4FC1FAF301600C3377C /* LBRankController.swift in Sources */,
+				F877D9962020524900B6030F /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,7 +611,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 9266GAZZ3C;
+				DEVELOPMENT_TEAM = MECQS3Z269;
 				INFOPLIST_FILE = LBTV/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -615,7 +627,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 9266GAZZ3C;
+				DEVELOPMENT_TEAM = MECQS3Z269;
 				INFOPLIST_FILE = LBTV/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -699,6 +711,7 @@
 				3A0CC4AE1FAF24B100C3377C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A0CC4AF1FAF24B100C3377C /* Build configuration list for PBXNativeTarget "LBTVTests" */ = {
 			isa = XCConfigurationList;
@@ -707,6 +720,7 @@
 				3A0CC4B11FAF24B100C3377C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A0CC4B21FAF24B100C3377C /* Build configuration list for PBXNativeTarget "LBTVUITests" */ = {
 			isa = XCConfigurationList;
@@ -715,6 +729,7 @@
 				3A0CC4B41FAF24B100C3377C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
