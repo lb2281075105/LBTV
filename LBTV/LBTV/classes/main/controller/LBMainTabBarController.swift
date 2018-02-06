@@ -12,19 +12,26 @@ class LBMainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        addChildVc("LBHome")
-        addChildVc("LBRank")
-        addChildVc("LBDiscover")
-        addChildVc("LBProfile")
+        
+        addChildVc(childVc: LBHomeController(), title: "首页", imageName: "live")
+        addChildVc(childVc: LBRankController(), title: "消息", imageName: "ranking")
+        addChildVc(childVc: LBDiscoverController(), title: "发现", imageName: "found")
+        addChildVc(childVc: LBProfileController(), title: "我", imageName: "mine")
         
     }
     
-    fileprivate func addChildVc(_ storyName : String) {
-        // 通过storyboard获取控制器
-        let childVc = UIStoryboard(name: storyName, bundle: nil).instantiateInitialViewController()!
-        let nav = LBNavController.init(rootViewController: childVc)
-        // 将childVc作为子控制器
-        addChildViewController(nav)
+    private func addChildVc(childVc: UIViewController, title : String, imageName : String) {
+        
+        // 设置子控制器的属性
+        childVc.title = title
+        childVc.tabBarItem.image = UIImage(named: imageName + "-n")
+        childVc.tabBarItem.selectedImage = UIImage(named: imageName + "-p")
+        
+        // 设置导航栏控制器
+        let childNav = LBNavController(rootViewController: childVc)
+        
+        // 添加控制器
+        addChildViewController(childNav)
     }
+
 }
