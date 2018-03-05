@@ -19,10 +19,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        automaticallyAdjustsScrollViewInsets = false
+        
 //        let titles = ["游戏", "娱乐", "趣玩", "美女", "颜值"]
         let titles = ["游戏", "娱乐娱乐娱乐", "趣玩", "美女女", "颜值颜值", "趣玩", "美女女", "颜值颜值"]
         let style = LBTitleStyle()
-
+        style.isScrollEnable = true
         // 子控制器
         var childVcs = [UIViewController]()
         for _ in 0..<titles.count {
