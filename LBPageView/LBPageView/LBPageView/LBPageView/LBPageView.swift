@@ -39,7 +39,7 @@ extension LBPageView {
     
     private func setUpTitleView() {
         let titleFrame = CGRect(x: 0, y: 0, width: bounds.width, height: style.titleHeight)
-        titleView = LBTitleView(frame: titleFrame, titles: titles)
+        titleView = LBTitleView(frame: titleFrame, titles: titles, style : style)
         addSubview(titleView)
         titleView.backgroundColor = UIColor.randomColor()
     }
@@ -50,5 +50,8 @@ extension LBPageView {
         let contentView = LBContentView(frame: contentFrame, childVcs: childVcs, parentVc: parentVc)
         addSubview(contentView)
         contentView.backgroundColor = UIColor.randomColor()
+        
+        // contentView成为titleView代理
+        titleView.delegate = contentView
     }
 }

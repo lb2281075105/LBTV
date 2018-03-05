@@ -79,3 +79,11 @@ extension LBContentView : UICollectionViewDataSource {
         return cell
     }
 }
+
+// LBTitleViewDelegate
+extension LBContentView : LBTitleViewDelegate {
+    func titleView(_ titleView: LBTitleView, targetIndex: Int) {
+        let indexPath = IndexPath(item: targetIndex, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .left, animated: false)
+    }
+}

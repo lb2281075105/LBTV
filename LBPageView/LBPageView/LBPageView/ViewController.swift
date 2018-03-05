@@ -19,8 +19,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let titles = ["游戏", "娱乐", "趣玩", "美女", "颜值"]
+//        let titles = ["游戏", "娱乐", "趣玩", "美女", "颜值"]
+        let titles = ["游戏", "娱乐娱乐娱乐", "趣玩", "美女女", "颜值颜值", "趣玩", "美女女", "颜值颜值"]
         let style = LBTitleStyle()
+
         // 子控制器
         var childVcs = [UIViewController]()
         for _ in 0..<titles.count {
@@ -29,7 +31,7 @@ class ViewController: UIViewController {
             childVcs.append(vc)
         }
         
-        let pageFrame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
+        let pageFrame = CGRect(x: 0, y: 64, width: view.bounds.width, height: view.bounds.height - 64)
         
         let pageView = LBPageView(frame: pageFrame, titles: titles, childVcs: childVcs, parentVc: self, style : style)
         view.addSubview(pageView)
