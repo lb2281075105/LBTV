@@ -13,14 +13,15 @@ protocol LBTitleViewDelegate : class {
 }
 
 class LBTitleView: UIView {
-    // 设置代理
+    
     weak var delegate : LBTitleViewDelegate?
     
     fileprivate var titles : [String]
     fileprivate var style : LBTitleStyle
-    fileprivate lazy var currentIndex : Int = 0
-    fileprivate lazy var titleLabels : [UILabel] = [UILabel]()
     
+    fileprivate lazy var currentIndex : Int = 0
+    
+    fileprivate lazy var titleLabels : [UILabel] = [UILabel]()
     fileprivate lazy var scrollView : UIScrollView = {
         let scrollView = UIScrollView(frame: self.bounds)
         scrollView.showsHorizontalScrollIndicator = false
@@ -28,30 +29,31 @@ class LBTitleView: UIView {
         return scrollView
     }()
     
-    
-    
     init(frame: CGRect, titles : [String], style : LBTitleStyle) {
         self.titles = titles
         self.style = style
         
         super.init(frame: frame)
         
-        setUpUI()
+        setupUI()
     }
-
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
 }
 
+
 extension LBTitleView {
-    fileprivate func setUpUI() {
+    fileprivate func setupUI() {
         // 将UIScrollVIew添加到view中
         addSubview(scrollView)
+        
         // 将titleLabel添加到UIScrollView中
         setupTitleLabels()
+        
+        // 设置titleLabel的frame
         setupTitleLabelsFrame()
     }
     
@@ -103,24 +105,35 @@ extension LBTitleView {
 }
 
 
-// MARK:- 监听事件
+// 监听事件
 extension LBTitleView {
     @objc fileprivate func titleLabelClick(_ tapGes : UITapGestureRecognizer) {
-        // 1.取出用户点击的View
+        // 取出用户点击的View
         let targetLabel = tapGes.view as! UILabel
+        
+        // 调整title
+        adjustTitleLabel(targetIndex: targetLabel.tag)
+        
+        // 通知代理
+        delegate?.titleView(self, targetIndex: currentIndex)
+    }
+    
+    fileprivate func adjustTitleLabel(targetIndex : Int) {
+        
+        if targetIndex == currentIndex { return }
+        
+        // 取出Label
+        let targetLabel = titleLabels[targetIndex]
         let sourceLabel = titleLabels[currentIndex]
         
-        // 2.切换文字的颜色
+        // 切换文字的颜色
         targetLabel.textColor = style.selectColor
         sourceLabel.textColor = style.normalColor
         
-        // 3.记录下标值
-        currentIndex = targetLabel.tag
+        // 记录下标值
+        currentIndex = targetIndex
         
-        // 4.通知ContentView进行调整
-        delegate?.titleView(self, targetIndex: currentIndex)
-        
-        // 5.调整位置
+        // 调整位置
         if style.isScrollEnable {
             var offsetX = targetLabel.center.x - scrollView.bounds.width * 0.5
             if offsetX < 0 {
@@ -132,5 +145,27 @@ extension LBTitleView {
             scrollView.setContentOffset(CGPoint(x: offsetX, y : 0), animated: true)
         }
     }
+}
+
+
+// LBContentViewDelegate
+extension LBTitleView : LBContentViewDelegate {
+    func contentView(_ contentView: LBContentView, targetIndex: Int) {
+        adjustTitleLabel(targetIndex: targetIndex)
+    }
+    
+    func contentView(_ contentView: LBContentView, targetIndex: Int, progress: CGFloat) {
+        // 取出Label
+        let targetLabel = titleLabels[targetIndex]
+        let sourceLabel = titleLabels[currentIndex]
+        
+        // 颜色渐变
+        let deltaRGB = UIColor.getRGBDelta(style.selectColor, style.normalColor)
+        let selectRGB = style.selectColor.getRGB()
+        let normalRGB = style.normalColor.getRGB()
+        targetLabel.textColor = UIColor(r: normalRGB.0 + deltaRGB.0 * progress, g: normalRGB.1 + deltaRGB.1 * progress, b: normalRGB.2 + deltaRGB.2 * progress)
+        sourceLabel.textColor = UIColor(r: selectRGB.0 - deltaRGB.0 * progress, g: selectRGB.1 - deltaRGB.1 * progress, b: selectRGB.2 - deltaRGB.2 * progress)
+    }
+    
 }
 
