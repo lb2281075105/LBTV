@@ -35,6 +35,7 @@ class LBTitleView: UIView {
         bottomLine.frame.origin.y = self.bounds.height - self.style.scrollLineHeight
         return bottomLine
     }()
+    
     init(frame: CGRect, titles : [String], style : LBTitleStyle) {
         self.titles = titles
         self.style = style
@@ -61,6 +62,7 @@ extension LBTitleView {
         
         // 设置titleLabel的frame
         setupTitleLabelsFrame()
+        
         // 添加滚动条
         if style.isShowScrollLine {
             scrollView.addSubview(bottomLine)
@@ -132,12 +134,15 @@ extension LBTitleView {
         
         // 调整title
         adjustTitleLabel(targetIndex: targetLabel.tag)
+        
+        // 调整bottomLine
         if style.isShowScrollLine {
             UIView.animate(withDuration: 0.25, animations: {
                 self.bottomLine.frame.origin.x = targetLabel.frame.origin.x
                 self.bottomLine.frame.size.width = targetLabel.frame.width
             })
         }
+        
         // 通知代理
         delegate?.titleView(self, targetIndex: currentIndex)
     }
@@ -145,10 +150,11 @@ extension LBTitleView {
     fileprivate func adjustTitleLabel(targetIndex : Int) {
         
         if targetIndex == currentIndex { return }
-        print(targetIndex,currentIndex)
+        
         // 取出Label
         let targetLabel = titleLabels[targetIndex]
         let sourceLabel = titleLabels[currentIndex]
+        
         // 切换文字的颜色
         targetLabel.textColor = style.selectColor
         sourceLabel.textColor = style.normalColor
@@ -188,6 +194,7 @@ extension LBTitleView : LBContentViewDelegate {
         let normalRGB = style.normalColor.getRGB()
         targetLabel.textColor = UIColor(r: normalRGB.0 + deltaRGB.0 * progress, g: normalRGB.1 + deltaRGB.1 * progress, b: normalRGB.2 + deltaRGB.2 * progress)
         sourceLabel.textColor = UIColor(r: selectRGB.0 - deltaRGB.0 * progress, g: selectRGB.1 - deltaRGB.1 * progress, b: selectRGB.2 - deltaRGB.2 * progress)
+        
         // bottomLine渐变过程
         if style.isShowScrollLine {
             let deltaX = targetLabel.frame.origin.x - sourceLabel.frame.origin.x
@@ -198,4 +205,3 @@ extension LBTitleView : LBContentViewDelegate {
     }
     
 }
-
