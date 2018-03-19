@@ -11,9 +11,9 @@ convenience init(r:CGFloat,g:CGFloat,b:CGFloat,alpha:CGFloat = 1.0) {
 }
 ```
 3、类方法：随机颜色<br>
-`
+```
 class func randomColor() -> UIColor {
     return UIColor(r: CGFloat(arc4random_uniform(256)), g: CGFloat(arc4random_uniform(256)), b: CGFloat(arc4random_uniform(256)))
 }
-`
+```
 
