@@ -222,8 +222,8 @@
 		3A0CC4B51FAF258900C3377C /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				3A0E14DE205F640D00D52325 /* base */,
 				F86FE5312029823200010E27 /* source */,
-				F877D99320203E0300B6030F /* base */,
 				3A0CC4B81FAF258900C3377C /* main */,
 				3A0CC4B71FAF258900C3377C /* home */,
 				3A0CC4BA1FAF258900C3377C /* profile */,
@@ -329,6 +329,13 @@
 			path = discover;
 			sourceTree = "<group>";
 		};
+		3A0E14DE205F640D00D52325 /* base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
 		F86FE5312029823200010E27 /* source */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,13 +367,6 @@
 				F86FE5462029830200010E27 /* ranking-p@3x.png */,
 			);
 			path = tabbar;
-			sourceTree = "<group>";
-		};
-		F877D99320203E0300B6030F /* base */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = base;
 			sourceTree = "<group>";
 		};
 		F877D9942020520100B6030F /* Extension */ = {
