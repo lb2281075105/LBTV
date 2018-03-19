@@ -21,7 +21,7 @@ class LBHomeController: UIViewController {
 extension LBHomeController{
     fileprivate func addUI(){
         // 左侧logoItem
-        let logoImage = UIImage(named: "center_icon_follow_zhibo")
+        let logoImage = UIImage(named: "center_icon_follow_zhibo")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: logoImage, style: .plain, target: nil, action: nil)
         
         // 设置右侧收藏的item
