@@ -40,7 +40,20 @@ extension LBHomeController{
     func addContentView(){
         // 加载数据
         let homeTypes = loadTypesData()
-        print(homeTypes)
+        
+        let style = LBTitleStyle()
+        style.isScrollEnable = true
+        let pageFrame = CGRect(x: 0, y: LBNavigationBarH + LBStatusBarH, width: LBScreenW, height: LBScreenH - LBNavigationBarH - LBStatusBarH - 44)
+
+        let titles = homeTypes.map({ $0.title })
+        var childVcs = [UIViewController]()
+//        for type in homeTypes {
+//            let anchorVc = AnchorViewController()
+//            anchorVc.homeType = type
+//            childVcs.append(anchorVc)
+//        }
+        let pageView = LBPageView(frame: pageFrame, titles: titles, style: style, childVcs: childVcs, parentVc: self)
+        view.addSubview(pageView)
         
     }
     fileprivate func loadTypesData() -> [LBHomeType] {
