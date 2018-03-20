@@ -15,6 +15,7 @@ class LBHomeController: UIViewController {
 
         view.backgroundColor = UIColor.white;
         addUI()
+        addContentView()
     }
 }
 
@@ -35,6 +36,21 @@ extension LBHomeController{
         searchBar.searchBarStyle = .minimal
         let searchFiled = searchBar.value(forKey: "_searchField") as? UITextField
         searchFiled?.textColor = UIColor.white
+    }
+    func addContentView(){
+        // 加载数据
+        let homeTypes = loadTypesData()
+        print(homeTypes)
+        
+    }
+    fileprivate func loadTypesData() -> [LBHomeType] {
+        let path = Bundle.main.path(forResource: "types.plist", ofType: nil)!
+        let dataArray = NSArray(contentsOfFile: path) as! [[String : Any]]
+        var modelArray = [LBHomeType]()
+        for dict in dataArray {
+            modelArray.append(LBHomeType(dict: dict))
+        }
+        return modelArray
     }
 }
 // 事件监听函数

@@ -1,7 +1,18 @@
 # LBTV
 直播
+##### 1、直播项目第二天<br>
+1、加载数据，创建模型<br>
+```
+var title : String = ""
+var type : Int = 0
 
-
+override init() {}
+    init(dict:[String:Any]) {
+    super.init()
+    setValuesForKeys(dict)
+}
+override func setValue(_ value: Any?, forUndefinedKey key: String) {}
+```
 ##### 1、直播项目第一天<br>
 1、用Storyboard来创建模块页面<br>
 2、在extension中给系统的类扩充构造函数,只能扩充`便利构造函数`,设置默认值alpha:CGFloat = 1.0，系统就会出现两个方法供我们选择<br>
@@ -16,4 +27,5 @@ class func randomColor() -> UIColor {
     return UIColor(r: CGFloat(arc4random_uniform(256)), g: CGFloat(arc4random_uniform(256)), b: CGFloat(arc4random_uniform(256)))
 }
 ```
+4、渲染标签栏按钮图片，加载启动页
 

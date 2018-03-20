@@ -35,6 +35,10 @@
 		3A0CC5001FAF304A00C3377C /* LBDiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CC4FF1FAF304A00C3377C /* LBDiscoverController.swift */; };
 		3A0CC5021FAF306000C3377C /* LBProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CC5011FAF306000C3377C /* LBProfileController.swift */; };
 		3A0CC5041FAF308400C3377C /* LBNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CC5031FAF308400C3377C /* LBNavController.swift */; };
+		3A566A752060F69100912CCF /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A566A742060F69100912CCF /* NSDate+Extension.swift */; };
+		3A566A782060F70400912CCF /* LBConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A566A772060F70400912CCF /* LBConst.swift */; };
+		3A566A7A2060F83700912CCF /* types.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A566A792060F83700912CCF /* types.plist */; };
+		3A566A7D2060F93100912CCF /* LBHomeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A566A7C2060F93100912CCF /* LBHomeType.swift */; };
 		5C0774326FAA191A126D20EA /* Pods_LBTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED5BCA5E071E612E7FEFB2CE /* Pods_LBTV.framework */; };
 		F86FE5492029830200010E27 /* homepage_btn_play_n@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F86FE5372029830100010E27 /* homepage_btn_play_n@2x.png */; };
 		F86FE54A2029830200010E27 /* found-p@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F86FE5382029830100010E27 /* found-p@2x.png */; };
@@ -123,6 +127,10 @@
 		3A0CC4FF1FAF304A00C3377C /* LBDiscoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBDiscoverController.swift; sourceTree = "<group>"; };
 		3A0CC5011FAF306000C3377C /* LBProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBProfileController.swift; sourceTree = "<group>"; };
 		3A0CC5031FAF308400C3377C /* LBNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBNavController.swift; sourceTree = "<group>"; };
+		3A566A742060F69100912CCF /* NSDate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
+		3A566A772060F70400912CCF /* LBConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBConst.swift; sourceTree = "<group>"; };
+		3A566A792060F83700912CCF /* types.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = types.plist; sourceTree = "<group>"; };
+		3A566A7C2060F93100912CCF /* LBHomeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBHomeType.swift; sourceTree = "<group>"; };
 		4035BB28028613F18C71BD69 /* Pods-LBTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LBTV.release.xcconfig"; path = "Pods/Target Support Files/Pods-LBTV/Pods-LBTV.release.xcconfig"; sourceTree = "<group>"; };
 		72B9ED3BE1788D970C6548D4 /* Pods-LBTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LBTV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LBTV/Pods-LBTV.debug.xcconfig"; sourceTree = "<group>"; };
 		ED5BCA5E071E612E7FEFB2CE /* Pods_LBTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LBTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -252,6 +260,7 @@
 		3A0CC4B71FAF258900C3377C /* home */ = {
 			isa = PBXGroup;
 			children = (
+				3A566A7B2060F91800912CCF /* model */,
 				3A0CC4F71FAF2FD600C3377C /* LBHome.storyboard */,
 				3A0CC4F91FAF2FF600C3377C /* LBHomeController.swift */,
 			);
@@ -297,6 +306,7 @@
 		3A0CC4C31FAF2B2800C3377C /* tool */ = {
 			isa = PBXGroup;
 			children = (
+				3A566A762060F6F500912CCF /* common */,
 				F877D9942020520100B6030F /* Extension */,
 				3A0CC4C41FAF2B2800C3377C /* Additions */,
 			);
@@ -351,6 +361,22 @@
 			path = base;
 			sourceTree = "<group>";
 		};
+		3A566A762060F6F500912CCF /* common */ = {
+			isa = PBXGroup;
+			children = (
+				3A566A772060F70400912CCF /* LBConst.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		3A566A7B2060F91800912CCF /* model */ = {
+			isa = PBXGroup;
+			children = (
+				3A566A7C2060F93100912CCF /* LBHomeType.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		3D1D08316B2D7EB3EA878187 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +389,7 @@
 		F86FE5312029823200010E27 /* source */ = {
 			isa = PBXGroup;
 			children = (
+				3A566A792060F83700912CCF /* types.plist */,
 				F86FE536202982BF00010E27 /* tabbar */,
 			);
 			path = source;
@@ -397,6 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				F877D9952020524900B6030F /* UIColor+Extension.swift */,
+				3A566A742060F69100912CCF /* NSDate+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -535,6 +563,7 @@
 				F86FE5512029830200010E27 /* homepage_btn_play_n@3x.png in Resources */,
 				F86FE5522029830200010E27 /* live-n@3x.png in Resources */,
 				F86FE5592029830200010E27 /* ranking-p@2x.png in Resources */,
+				3A566A7A2060F83700912CCF /* types.plist in Resources */,
 				3A0CC4F81FAF2FD600C3377C /* LBHome.storyboard in Resources */,
 				3A0CC4FE1FAF302200C3377C /* LBRank.storyboard in Resources */,
 				F86FE5552029830200010E27 /* found-p@3x.png in Resources */,
@@ -621,9 +650,11 @@
 				3A0CC4E51FAF2B2800C3377C /* UIColor+CZAddition.m in Sources */,
 				3A0CC4DF1FAF2B2800C3377C /* NSAttributedString+CZAdditon.m in Sources */,
 				3A0CC4E31FAF2B2800C3377C /* NSString+CZPath.m in Sources */,
+				3A566A782060F70400912CCF /* LBConst.swift in Sources */,
 				3A0CC4FA1FAF2FF600C3377C /* LBHomeController.swift in Sources */,
 				3A0CC4DE1FAF2B2800C3377C /* NSArray+Log.m in Sources */,
 				3A0CC4EB1FAF2CDD00C3377C /* LBMainTabBarController.swift in Sources */,
+				3A566A752060F69100912CCF /* NSDate+Extension.swift in Sources */,
 				3A0CC5001FAF304A00C3377C /* LBDiscoverController.swift in Sources */,
 				3A0CC4E41FAF2B2800C3377C /* UIButton+CZAddition.m in Sources */,
 				3A0CC5041FAF308400C3377C /* LBNavController.swift in Sources */,
@@ -634,6 +665,7 @@
 				3A0CC4E01FAF2B2800C3377C /* NSObject+CZRuntime.m in Sources */,
 				3A0CC5021FAF306000C3377C /* LBProfileController.swift in Sources */,
 				3A0CC4E91FAF2B2800C3377C /* UIViewController+CZAddition.m in Sources */,
+				3A566A7D2060F93100912CCF /* LBHomeType.swift in Sources */,
 				3A0CC4E71FAF2B2800C3377C /* UIScreen+CZAddition.m in Sources */,
 				3A0CC4881FAF24B100C3377C /* AppDelegate.swift in Sources */,
 				3A0CC4FC1FAF301600C3377C /* LBRankController.swift in Sources */,
